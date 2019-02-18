@@ -11,16 +11,13 @@ namespace Task3
             string stringInput3 = "";
 
             Console.WriteLine("Input first string: ");
-            stringInput1 = Console.ReadLine();
-            stringInput1 = stringInput1.ToUpper();
+            stringInput1 = Console.ReadLine().ToUpper();
 
             Console.WriteLine("Input second string: ");
-            stringInput2 = Console.ReadLine();
-            stringInput2 = stringInput2.ToUpper();
+            stringInput2 = Console.ReadLine().ToUpper();
 
-            Console.WriteLine("Input trird string: ");
-            stringInput3 = Console.ReadLine();
-            stringInput3 = stringInput3.ToUpper();
+            Console.WriteLine("Input third string: ");
+            stringInput3 = Console.ReadLine().ToUpper();
 
             bool result1 = stringInput1.StartsWith(stringInput2);
             bool result2 = stringInput1.EndsWith(stringInput3);

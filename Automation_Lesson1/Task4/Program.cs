@@ -8,7 +8,7 @@ namespace Task4
         {
             string stringInput1 = "";
             string stringInput2 = "";
-            string symbol;
+            char symbol;
 
             Console.WriteLine("Input first part of the string: ");
             stringInput1 = Console.ReadLine();
@@ -29,16 +29,16 @@ namespace Task4
             string stringConcatenated = stringInput1 + stringInput2;
 
             Console.WriteLine("Input symbol: ");
-            symbol = Console.ReadLine();
-            while ((symbol.Length > 1) || (symbol == ""))
+            symbol = Console.ReadKey().KeyChar;
+            while (Char.IsControl(symbol))
             {
-                Console.WriteLine("Input only one non-empty symbol: ");
-                symbol = Console.ReadLine();
+                Console.WriteLine("\nInput non-empty symbol: ");
+                symbol = Console.ReadKey().KeyChar;
             }
 
             int indexOfSymbol = stringConcatenated.LastIndexOf(symbol);
-            if (indexOfSymbol < 0) Console.WriteLine("{0} is not found in {1}",symbol, stringConcatenated);
-            else Console.WriteLine("Index of {0} in {1}: {2}", symbol, stringConcatenated, indexOfSymbol);
+            if (indexOfSymbol < 0) Console.WriteLine("\n{0} is not found in {1}", symbol, stringConcatenated);
+            else Console.WriteLine("\nIndex of {0} in {1}: {2}", symbol, stringConcatenated, indexOfSymbol);
             Console.ReadKey();
         }
     }

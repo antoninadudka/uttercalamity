@@ -42,7 +42,7 @@ namespace Task1
             double result2 = (x % z - 1) * Math.Sqrt(y);
             double result3 = (x * y + y * z) / Math.Pow(z, 2);
 
-            Console.WriteLine("x = " + x + "; y = " + y + "; z = " + z);
+            Console.WriteLine("x = {0}; y = {1}; z = {2}", x, y, z);
             Console.WriteLine("First expression result: " + result1);
             Console.WriteLine("Second expression result: " + result2);
             Console.WriteLine("Third expression result: " + result3);
