@@ -2,28 +2,33 @@
 
 namespace Calculator
 {
+    class Validation
+    {
+        public static double GetValidInput(string paramName)
+        {
+            Console.WriteLine("Input {0}:", paramName);
+
+            double resultInput;
+            string userInput = Console.ReadLine();
+
+            while (!double.TryParse(userInput, out resultInput))
+            {
+                Console.WriteLine("Invalid input. Input {0}:", paramName);
+                userInput = Console.ReadLine();
+            }
+
+            return resultInput;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            string xInput, yInput;
             double x, y;
             
-            Console.WriteLine("Input x:");
-            xInput = Console.ReadLine();
-            while (!double.TryParse(xInput, out x))
-            {
-                Console.WriteLine("Invalid input. Input x:");
-                xInput = Console.ReadLine();
-            }
-
-            Console.WriteLine("Input y:");
-            yInput = Console.ReadLine();
-            while (!double.TryParse(yInput, out y))
-            {
-                Console.WriteLine("Invalid input. Input y:");
-                yInput = Console.ReadLine();
-            }
+            x = Validation.GetValidInput("x");
+            y = Validation.GetValidInput("y");
 
             Console.WriteLine("Choose operation: +-/*^");
             char operation  = Console.ReadKey().KeyChar;

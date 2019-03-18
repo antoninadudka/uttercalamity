@@ -1,15 +1,12 @@
 ﻿using System;
 
-namespace Autotenfication
+namespace Authentication
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string login = "admin";
-            string password = "hello@123";
-            string loginInput;
-            string passwordInput;
+            string login = "admin", password = "hello@123", loginInput, passwordInput;
             int counter = 3;
 
             while (counter > 0)
@@ -21,7 +18,7 @@ namespace Autotenfication
 
                 if (loginInput == login && passwordInput == password)
                 {
-                    Console.WriteLine("Successful Autotenfication!");
+                    Console.WriteLine("Successful Authentication!");
                     counter = 0;
                 }
                 else
