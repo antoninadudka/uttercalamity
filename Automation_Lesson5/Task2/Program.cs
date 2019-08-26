@@ -83,15 +83,12 @@ namespace Task2
     {
         public static double Calculate(Car car)
         {
-            CarParts[] toBeCalculated = car.carModelParts;
-
             double result = 0;
             double partCost = 0;
 
-            for (int i = 0; i < toBeCalculated.Length; i++)
+            foreach (CarParts currentPart in car.carModelParts)
             {
-                CarParts currentPart = toBeCalculated[i];
-                partCost = (double)currentPart.GetType().GetProperty("PartCost").GetValue(currentPart, null);
+                partCost = currentPart.PartCost;
                 result = result + partCost;
             }
 
